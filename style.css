@@ -1,0 +1,41 @@
+.padding-top {
+    padding-top: 5%;
+}
+
+h1 {
+    font-family: 'Love Ya Like A Sister', cursive;
+
+  
+}
+
+.yellow-bg {
+    background-color: #FFC300;
+}
+.gold-bg {
+    background-color: gold}
+
+#size-img-1 {
+    width: 145px;
+    height: 170px;
+    padding-right: 10px
+}
+
+.text-font {
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 25px;
+}
+
+.box {
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    color: rgb(27,90, 166);
+    font-size: 20px;
+}
+
+#badass {
+    width: 320px;
+    height: 380px;
+}
+
+
