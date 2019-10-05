@@ -1,6 +1,3 @@
-// let player1 = document.getElementById("player1");
-// let player2 = document.getElementById("player2");
-
 class Player {
     constructor(name, symbol) {
         this.name = name;
@@ -65,7 +62,7 @@ function startGame() {
         return telaInicial.classList.add("hidden-section"), telaJogo.classList.remove("hidden-section");
     }
 }
-// let jogoDaVelha;
+
 const startButton = document.getElementById("start-game")
 startButton.addEventListener("click", startGame)
 
