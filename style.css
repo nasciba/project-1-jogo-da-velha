@@ -1,11 +1,12 @@
-.padding-top {
-    padding-top: 5%;
+.hidden-section {
+    display: none;
+ 
 }
 
 h1 {
+    padding-top: 5%;
     font-family: 'Love Ya Like A Sister', cursive;
-
-  
+    text-align: center
 }
 
 .yellow-bg {
@@ -20,10 +21,7 @@ h1 {
     padding-right: 10px
 }
 
-.text-font {
-    font-family: 'Love Ya Like A Sister', cursive;
-    font-size: 25px;
-}
+
 
 .box {
     width: 200px;
@@ -34,9 +32,9 @@ h1 {
     font-family:'Love Ya Like A Sister', cursive;
 }
 
-#badass {
-    width: 320px;
-    height: 380px;
+.text-font {
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 25px;
 }
 
 
