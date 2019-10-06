@@ -6,14 +6,17 @@
 h1 {
     padding-top: 5%;
     font-family: 'Love Ya Like A Sister', cursive;
-    text-align: center
+    text-align: center;
+    color: #993C8B
 }
 
-.yellow-bg {
-    background-color: #FFC300;
+.bg-yellow {
+    background-color: #FFF374;
 }
-.gold-bg {
-    background-color: gold}
+
+#text-button {
+    color: #E6C9FF;
+}
 
 #size-img-1 {
     width: 145px;
@@ -35,6 +38,47 @@ h1 {
 .text-font {
     font-family: 'Love Ya Like A Sister', cursive;
     font-size: 25px;
+    color: #827B5A
+}
+table {
+    padding-top: 20%;
+}
+td {
+    width: 100px;
+    height: 100px;
+    
+}
+table {
+    border-collapse: collapse
+}
+#square1 {
+    border-right: 3px solid #CC8DC2;
+    border-bottom: 3px solid #CC8DC2;
 }
 
+#square2 {
+    border-right: 3px solid #CC8DC2;
+    border-bottom: 3px solid #CC8DC2;
+}
 
+#square3 {
+    border-bottom: 3px solid #CC8DC2
+    
+}
+#square4 {
+    border-right: 3px solid #CC8DC2;
+    border-bottom: 3px solid #CC8DC2;
+}
+#square5 {
+    border-right: 3px solid #CC8DC2;
+    border-bottom: 3px solid #CC8DC2;
+}
+#square6 {
+    border-bottom: 3px solid #CC8DC2;
+}
+#square7 {
+    border-right: 3px solid #CC8DC2;
+}
+#square8 {
+    border-right: 3px solid #CC8DC2;
+}

@@ -1,1 +1,149 @@
-tela inicial do jogo - em breve
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister&display=swap');
+    </style>
+
+</head>
+
+<body class="bg-yellow">
+    <section id="tela-inicial">
+        <div>
+            <h1>Jogo da Velha</h1>
+        </div>
+        <br>
+
+        <div class="container text-center justify-content-center">
+            <div class="row">
+                <div class="col-4">
+                    <img src="./img/piupu.png" id="size-img-1" class="img-fluid float-right " alt="baddie winkle">
+                </div>
+                <div class="col-4">
+                    <div>
+                        <span class="text-font">Jogador 1:</span>
+                        <br>
+                        <input type="text" class="box" id="player1">
+                    </div>
+
+                    <div class="text-font">
+                        <span class="text-font">Jogador 2:</span>
+                        <br>
+                        <input type="text" class="box" id="player2">
+                    </div>
+                    <br>
+                </div>
+
+                <div class="col-4">
+                    <img src="./img/baddie-removebg-preview.png" class="img-fluid float-right " alt="baddie winkle">
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <button type="button" class="btn btn-success" id="start-game">
+                                <span class="text-font" id="text-button"> JOGAR! <span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="tela-jogo" class="container hidden-section">
+        <div>
+            <h1>Jogo da Velha</h1>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="text-font">
+                    <div>
+                        <h3>Jogador 1:</h3>
+                        <span id="display-jogador1"></span>
+                    </div>
+                    <div>
+                        <h3>Jogador 2:</h3>
+                        
+                        <span id="display-jogador1"> </span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="game-board">
+                <table col-6>
+
+                    <tr>
+                        <td id="square1"></td>
+                        <td id="square2"></td>
+                        <td id="square3"></td>
+                    </tr>
+                    <tr>
+                        <td id="square4"></td>
+                        <td id="square5"></td>
+                        <td id="square6"></td>
+                    </tr>
+                    <tr>
+                        <td id="square7"></td>
+                        <td id="square8"></td>
+                        <td id="square9"></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <div class="text-font col-6">
+            <h3>Instruções</h3>
+                <p>Escrever instruções</p>
+        </div>
+
+    </section>
+    <section class="hidden-section">
+        <div class="container text-center">
+            <h1 class="col-12 padding-top">Jogador 1 ganhou!</h1>
+            <br>
+            <div class="col-12">
+                <img src="./img/final.gif" class="rounded" id="" alt="baddie winkle">
+            </div>
+            <br>
+            <button type="button" class="btn border-dark text-center">JOGAR DE NOVO!</button>
+        </div>
+    </section>
+    <section class="hidden-section">
+        <div class="container text-center">
+            <h1 class="padding-top">Jogador 2 ganhou!</h1>
+            <br>
+            <div class="">
+                <img src="./img/final.gif" class="rounded" id=alt="baddie winkle">
+            </div>
+            <br>
+            <button type="button" class="btn border-dark text-center">JOGAR DE NOVO!</button>
+    </section>
+    <section class="hidden-section">
+        <div>
+            <h1>Jogo da Velha</h1>
+        </div>
+
+        <div>
+            <span>Velha! Ninguém ganhou nesta rodada!</span>
+        </div>
+        <br>
+        <div>
+            <button type="btn btn-success" class="btn">Jogar de novo</button>
+        </div>
+
+    </section>
+
+
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+
+</html>
