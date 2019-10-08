@@ -48,9 +48,7 @@ td {
     height: 100px;
     
 }
-table {
-    border-collapse: collapse
-}
+
 #square1 {
     border-right: 3px solid #CC8DC2;
     border-bottom: 3px solid #CC8DC2;

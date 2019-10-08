@@ -9,7 +9,14 @@ class Game {
         this.grid = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
         this.player1 = player1;
         this.player2 = player2;
-
+    }
+    print(player) {
+       if(this.player1 === player) {
+           return this.player1
+       }
+       else {
+           return this.player2
+       }
     }
     move(player, positionX, positionY) {
         if (this.grid[positionX][positionY] !== 0) {
@@ -44,18 +51,21 @@ class Game {
         }
     }
 }
+let jogoDaVelha;
+let player1;
+let player2;
 
 function startGame() {
     let name1 = document.getElementById("player1").value;
     let name2 = document.getElementById("player2").value;
-    let player1 = new Player(name1, "x");
-    let player2 = new Player(name2, "o");
-    let jogoDaVelha = new Game(player1, player2);
+    player1 = new Player(name1, "x");
+    player2 = new Player(name2, "o");
+    jogoDaVelha = new Game(player1, player2);
     const telaInicial = document.getElementById("tela-inicial");
     const telaJogo = document.getElementById("tela-jogo");
     if (name1 === '' || name2 === '') {
         alert("Por favor, insira os nomes dos jogadores para continuar");
-        
+
     }
     else {
         telaInicial.classList.add("hidden-section"), telaJogo.classList.remove("hidden-section");
@@ -65,13 +75,20 @@ function startGame() {
 const startButton = document.getElementById("start-game")
 startButton.addEventListener("click", startGame);
 
-const square1 = document.getElementById("square1");
-const square2 = document.getElementById("square2");
-const square3 = document.getElementById("square3");
-const square4 = document.getElementById("square4");
-const square5 = document.getElementById("square5");
-const square6 = document.getElementById("square6");
-const square7 = document.getElementById("square7");
-const square8 = document.getElementById("square8");
-const square9 = document.getElementById("square9");
+
+let squares = document.querySelector('[data-js-game="board"]').querySelectorAll('td');
+
+for(let i= 0; i < squares.length; i++) {
+    squares[i].onclick = (event) => {
+        let line = event.target.dataset.jsLine;
+        let column = event.target.dataset.jsColumn;
+        if(jogoDaVelha.grid[line][column] !== 0) {
+            return alert("Posição já marcada, escolha outra posição!")
+        }
+        jogoDaVelha.grid[line][column] = jogoDaVelha.print(player1).symbol;
+        squares[i].innerText = jogoDaVelha.print(player1).symbol
+    }
+}
+
+
 

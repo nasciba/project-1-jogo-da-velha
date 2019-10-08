@@ -8,6 +8,7 @@
     <title>Jogo da Velha</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister&display=swap');
     </style>
@@ -71,30 +72,30 @@
                     </div>
                     <div>
                         <h3>Jogador 2:</h3>
-                        
+
                         <span id="display-jogador1"> </span>
                     </div>
                 </div>
             </div>
 
 
-            <div class="game-board">
-                <table col-6>
+            <div class="game-board" data-js-game="board">
+                <table class="col-6" >
 
                     <tr>
-                        <td id="square1"></td>
-                        <td id="square2"></td>
-                        <td id="square3"></td>
+                        <td id="square1" data-js-line="0" data-js-column="0"></td>
+                        <td id="square2" data-js-line="0" data-js-column="1"></td>
+                        <td id="square3" data-js-line="0" data-js-column="2"></td>
                     </tr>
                     <tr>
-                        <td id="square4"></td>
-                        <td id="square5"></td>
-                        <td id="square6"></td>
+                        <td id="square4" data-js-line="1" data-js-column="0"></td>
+                        <td id="square5" data-js-line="1" data-js-column="1"></td>
+                        <td id="square6" data-js-line="1" data-js-column="2"></td>
                     </tr>
                     <tr>
-                        <td id="square7"></td>
-                        <td id="square8"></td>
-                        <td id="square9"></td>
+                        <td id="square7" data-js-line="2" data-js-column="0"></td>
+                        <td id="square8" data-js-line="2" data-js-column="1"></td>
+                        <td id="square9" data-js-line="2" data-js-column="2"></td>
                     </tr>
 
                 </table>
@@ -102,11 +103,11 @@
         </div>
         <div class="text-font col-6">
             <h3>Instruções</h3>
-                <p>Escrever instruções</p>
+            <p>Escrever instruções</p>
         </div>
 
     </section>
-    <section class="hidden-section">
+    <section class="hidden-section" id="player1-wins">
         <div class="container text-center">
             <h1 class="col-12 padding-top">Jogador 1 ganhou!</h1>
             <br>
@@ -117,17 +118,17 @@
             <button type="button" class="btn border-dark text-center">JOGAR DE NOVO!</button>
         </div>
     </section>
-    <section class="hidden-section">
+    <section class="hidden-section" id="player2-wins">
         <div class="container text-center">
-            <h1 class="padding-top">Jogador 2 ganhou!</h1>
+            <h1>Jogador 2 ganhou!</h1>
             <br>
-            <div class="">
-                <img src="./img/final.gif" class="rounded" id=alt="baddie winkle">
+            <div>
+                <img src="./img/final.gif" class="rounded" alt="baddie winkle">
             </div>
             <br>
             <button type="button" class="btn border-dark text-center">JOGAR DE NOVO!</button>
     </section>
-    <section class="hidden-section">
+    <section class="hidden-section" id="nobody-wins">
         <div>
             <h1>Jogo da Velha</h1>
         </div>
@@ -137,7 +138,7 @@
         </div>
         <br>
         <div>
-            <button type="btn btn-success" class="btn">Jogar de novo</button>
+            <button type="button" class="btn border-dark text-center">Jogar de novo</button>
         </div>
 
     </section>
