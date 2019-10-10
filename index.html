@@ -80,7 +80,7 @@
 
 
             <div class="game-board" data-js-game="board">
-                <table class="col-6" >
+                <table class="col-6">
 
                     <tr>
                         <td id="square1" data-js-line="0" data-js-column="0"></td>
@@ -107,28 +107,18 @@
         </div>
 
     </section>
-    <section class="hidden-section" id="player1-wins">
+    <section class="hidden-section" id="tela-win">
         <div class="container text-center">
-            <h1 class="col-12 padding-top">Jogador 1 ganhou!</h1>
+            <h1 class="col-12 padding-top" data-js-winner="player-name"></h1>
             <br>
             <div class="col-12">
                 <img src="./img/final.gif" class="rounded" id="" alt="baddie winkle">
             </div>
             <br>
-            <button type="button" class="btn border-dark text-center">JOGAR DE NOVO!</button>
+            <button type="button" class="btn border-dark text-center" id="play-again-btn">JOGAR DE NOVO!</button>
         </div>
     </section>
-    <section class="hidden-section" id="player2-wins">
-        <div class="container text-center">
-            <h1>Jogador 2 ganhou!</h1>
-            <br>
-            <div>
-                <img src="./img/final.gif" class="rounded" alt="baddie winkle">
-            </div>
-            <br>
-            <button type="button" class="btn border-dark text-center">JOGAR DE NOVO!</button>
-    </section>
-    <section class="hidden-section" id="nobody-wins">
+    <section class="hidden-section" id="tela-nobody-wins">
         <div>
             <h1>Jogo da Velha</h1>
         </div>
@@ -138,7 +128,7 @@
         </div>
         <br>
         <div>
-            <button type="button" class="btn border-dark text-center">Jogar de novo</button>
+            <button type="button" class="btn border-dark text-center" id="play-again-btn">Jogar de novo</button>
         </div>
 
     </section>

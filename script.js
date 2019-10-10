@@ -19,42 +19,89 @@ class Game {
             this.turn = this.player1;
         }
     }
-    move(player, positionX, positionY) {
-        if (this.grid[positionX][positionY] !== 0) {
-            return "Posição já marcada, escolha outra posição!"
-        }
-        else {
-            return this.grid[positionX][positionY] = player.symbol;
-        }
-        //repensar método move 
 
-
-    }
     checkWinner(player) {
+        let firstLine = (
+            player.symbol === this.grid[0][0]
+            && player.symbol === this.grid[0][1]
+            && player.symbol === this.grid[0][2]
+        )
 
-        if (player.symbol === this.grid[0][0] && player.symbol === this.grid[0][1] && player.symbol === this.grid[0][2]
-            || player.symbol === this.grid[1][0] && player.symbol === this.grid[1][1] && player.symbol === this.grid[1][2]
-            || player.symbol === this.grid[2][0] && player.symbol === this.grid[2][1] && player.symbol === this.grid[2][2]
-            || player.symbol === this.grid[0][0] && player.symbol === this.grid[1][0] && player.symbol === this.grid[2][0]
-            || player.symbol === this.grid[0][1] && player.symbol === this.grid[1][1] && player.symbol === this.grid[2][1]
-            || player.symbol === this.grid[2][0] && player.symbol === this.grid[1][2] && player.symbol === this.grid[2][2]
-            || player.symbol === this.grid[2][0] && player.symbol === this.grid[1][1] && player.symbol === this.grid[0][2]
-            || player.symbol === this.grid[0][0] && player.symbol === this.grid[1][1] && player.symbol === this.grid[2][2]) {
-            return `${player.name} ganhou!`
+        let secondLine = (
+            player.symbol === this.grid[1][0]
+            && player.symbol === this.grid[1][1]
+            && player.symbol === this.grid[1][2]
+        )
+        let thirdLine = (
+            player.symbol === this.grid[2][0]
+            && player.symbol === this.grid[2][1]
+            && player.symbol === this.grid[2][2]
+
+        )
+        let firstColumn = (
+            player.symbol === this.grid[0][0]
+            && player.symbol === this.grid[1][0]
+            && player.symbol === this.grid[2][0]
+        )
+        let secondColumn = (
+            player.symbol === this.grid[0][1]
+            && player.symbol === this.grid[1][1]
+            && player.symbol === this.grid[2][1]
+        )
+        let thirdColumn = (
+            player.symbol === this.grid[0][2]
+            && player.symbol === this.grid[1][2]
+            && player.symbol === this.grid[2][2]
+        )
+        let leftDiagonal = (
+            player.symbol === this.grid[0][0]
+            && player.symbol === this.grid[1][1]
+            && player.symbol === this.grid[2][2]
+        )
+        let rightDiagonal = (
+            player.symbol === this.grid[0][2]
+            && player.symbol === this.grid[1][1]
+            && player.symbol === this.grid[2][0]
+        )
+
+        if (firstLine || secondLine || thirdLine ||
+            firstColumn || secondColumn || thirdColumn
+            || leftDiagonal || rightDiagonal) {
+            setTimeout(function () {
+                let winMessage = document.getElementsByTagName('h1')[2];
+                telaJogo.classList.add("hidden-section"),
+                    telaWin.classList.remove("hidden-section"),
+                    winMessage.innerText = `${player.name} ganhou!`;
+            }, 500);
         }
-        else {
-            for (let i = 0; i < this.grid.length; i += 1) {
-                if (this.grid[i] !== 0) {
-                    return "Ninguém ganhou nesta rodada!";
+    }
+    checkIfNobodyWins() {
+        for (let i = 0; i < this.grid.length; i++) {
+            for (let j = 0; j < this.grid[i].length; j++) {
+                if (this.grid[i][j] === 0) {
+                    return false;
                 }
             }
-
         }
+        return setTimeout(function () {
+            const telaNobodywins = document.getElementById("tela-nobody-wins");
+            let nobodyWinsMsg = document.getElementsByTagName('h1')[3];
+            return telaJogo.classList.add("hidden-section"),
+                telaNobodywins.classList.remove("hidden-section"),
+                nobodyWinsMsg.innerText = "Ninguém ganhou nesta rodada";
+        }, 500);
     }
 }
+
+
 let jogoDaVelha;
-let player1;
-let player2;
+let player1
+let player2
+let squares = document.querySelector('[data-js-game="board"]').querySelectorAll('td');
+const telaInicial = document.getElementById("tela-inicial");
+const telaJogo = document.getElementById("tela-jogo");
+const telaWin = document.getElementById("tela-win");
+const telaNobodywins = document.getElementById("tela-nobody-wins");
 
 function goToGame() {
     let name1 = document.getElementById("player1").value;
@@ -62,46 +109,41 @@ function goToGame() {
     player1 = new Player(name1, "x");
     player2 = new Player(name2, "o");
     jogoDaVelha = new Game(player1, player2);
-    const telaInicial = document.getElementById("tela-inicial");
-    const telaJogo = document.getElementById("tela-jogo");
+
     if (name1 === '' || name2 === '') {
         alert("Por favor, insira os nomes dos jogadores para continuar");
 
     }
     else {
-        telaInicial.classList.add("hidden-section"), telaJogo.classList.remove("hidden-section");
+        telaInicial.classList.add("hidden-section");
+        telaJogo.classList.remove("hidden-section");
+        startGame();
     }
 }
 
 const startButton = document.getElementById("start-game")
 startButton.addEventListener("click", goToGame);
 
-
-let squares = document.querySelector('[data-js-game="board"]').querySelectorAll('td');
-
 function startGame() {
-      
-        for (let i = 0; i < squares.length; i++) {
-            squares[i].onclick = (event) => {
-                let player = jogoDaVelha.turn;
-                let line = event.target.dataset.jsLine;
-                let column = event.target.dataset.jsColumn;
-                if (jogoDaVelha.grid[line][column] !== 0) {
-                    return alert("Posição já marcada, escolha outra posição!");
-                }
-                jogoDaVelha.grid[line][column] = player.symbol;
-                squares[i].innerText = player.symbol;
-                jogoDaVelha.turnPlayer();
-
-
+    for (let i = 0; i < squares.length; i++) {
+        squares[i].onclick = (event) => {
+            event.preventDefault()
+            let player = jogoDaVelha.turn;
+            let line = event.target.dataset.jsLine;
+            let column = event.target.dataset.jsColumn;
+            if (jogoDaVelha.grid[line][column] !== 0) {
+                return alert("Posição já marcada, escolha outra posição!");
+            }
+            jogoDaVelha.grid[line][column] = player.symbol;
+            squares[i].innerText = player.symbol;
+            jogoDaVelha.turnPlayer();
+            jogoDaVelha.checkWinner(player);
+            if (jogoDaVelha.checkWinner === false) {
+                return jogoDaVelha.checkIfNobodyWins();
             }
         }
-
     }
-    
-    
-startGame();
-
+}
 
 
 
