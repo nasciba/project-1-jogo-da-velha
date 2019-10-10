@@ -95,17 +95,21 @@ class Game {
 
 
 let jogoDaVelha;
-let player1
-let player2
+let player1;
+let player2;
+let name1;
+let name2;
 let squares = document.querySelector('[data-js-game="board"]').querySelectorAll('td');
 const telaInicial = document.getElementById("tela-inicial");
 const telaJogo = document.getElementById("tela-jogo");
 const telaWin = document.getElementById("tela-win");
 const telaNobodyWins = document.getElementById("tela-nobody-wins");
+const display1 = document.getElementById("display1");
+const display2 = document.getElementById("display2");
 
 function goToGame() {
-    let name1 = document.getElementById("player1").value;
-    let name2 = document.getElementById("player2").value;
+    name1 = document.getElementById("player1").value;
+    name2 = document.getElementById("player2").value;
     player1 = new Player(name1, "x");
     player2 = new Player(name2, "o");
     jogoDaVelha = new Game(player1, player2);
@@ -125,6 +129,8 @@ const startButton = document.getElementById("start-game")
 startButton.addEventListener("click", goToGame);
 
 function startGame() {
+    display1.innerText = jogoDaVelha.player1.name;
+    display2.innerText = jogoDaVelha.player2.name;
     for (let i = 0; i < squares.length; i++) {
         squares[i].onclick = (event) => {
             event.preventDefault()
@@ -146,9 +152,7 @@ function startGame() {
 }
 
 function playAgain() {
-    telaNobodyWins.classList.add("hidden-section")
-    telaWin.classList.add("hidden-section") 
-    telaInicial.classList.remove("hidden-section");
+    location.reload();
 }
 
 let playAgainBtn = document.getElementById("play-again-btn");
