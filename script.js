@@ -64,8 +64,8 @@ class Game {
             && player.symbol === this.grid[2][0]
         )
 
-        if (firstLine || secondLine || thirdLine ||
-            firstColumn || secondColumn || thirdColumn
+        if (firstLine || secondLine || thirdLine
+            || firstColumn || secondColumn || thirdColumn
             || leftDiagonal || rightDiagonal) {
             setTimeout(function () {
                 let winMessage = document.getElementsByTagName('h1')[2];
@@ -101,7 +101,7 @@ let squares = document.querySelector('[data-js-game="board"]').querySelectorAll(
 const telaInicial = document.getElementById("tela-inicial");
 const telaJogo = document.getElementById("tela-jogo");
 const telaWin = document.getElementById("tela-win");
-const telaNobodywins = document.getElementById("tela-nobody-wins");
+const telaNobodyWins = document.getElementById("tela-nobody-wins");
 
 function goToGame() {
     let name1 = document.getElementById("player1").value;
@@ -145,5 +145,13 @@ function startGame() {
     }
 }
 
+function playAgain() {
+    telaNobodyWins.classList.add("hidden-section")
+    telaWin.classList.add("hidden-section") 
+    telaInicial.classList.remove("hidden-section");
+}
+
+let playAgainBtn = document.getElementById("play-again-btn");
+playAgainBtn.addEventListener("click", playAgain)
 
 
