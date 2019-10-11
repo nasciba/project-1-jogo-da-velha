@@ -5,29 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Jogo da Velha</title>
+    <title> Jogo da Velha</title>
     <script src="https://use.fontawesome.com/bcdc1f8f60.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="bootstrap.css">
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet');
+        @import url('https://fonts.googleapis.com/css?family=Codystar&display=swap" rel="stylesheet');
         @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet');
     </style>
 
 </head>
 
 <body>
-    <section id="tela-inicial">
+    <header>
+        <p>Jogo da Velha<p>
+    </header>
+    <section class="bg-green" id="tela-inicial">
         <div>
-            <h1>Jogo da Velha</h1>
+
         </div>
         <br>
 
         <div class="container text-center justify-content-center">
             <div class="row">
                 <div class="col-4">
-                    <img src="./img/piupu.png" id="size-img-1" class="img-fluid float-right " alt="baddie winkle">
+                    <img src="./img/baddie-removebg-preview.png" class="img-fluid float-left " alt="baddie winkle">
                 </div>
                 <div class="col-4">
                     <div>
@@ -47,42 +50,35 @@
                 <div class="col-4">
                     <img src="./img/baddie-removebg-preview.png" class="img-fluid float-right " alt="baddie winkle">
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            <button type="button" class="btn border-dark text-center" id="start-game">
-                                <span class="" id=""> JOGAR! <span>
-                            </button>
-                        </div>
-                    </div>
+                <div class="col-12 text-center">
+                    <button type="button" class="btn border-dark text-center" id="start-game">
+                        <span class="" id=""> JOGAR! <span>
+                    </button>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section id="tela-jogo" class="container hidden-section">
-        <div>
-            <h1>Jogo da Velha</h1>
-        </div>
+    <section id="tela-jogo" class="bg-green hidden-section">
+        <div class="container">
         <div class="row">
-            <div class="col-6">
-                <div class="text-font">
-                    <div>
-                        <h3>Jogador 1:</h3>
-                        <span id="display1"></span>
-                    </div>
-                    <div>
-                        <h3>Jogador 2:</h3>
-
-                        <span id="display2"> </span>
-                    </div>
+            <div class="col-3 text-font text-left">
+                <div>
+                    <span>Jogador 1:</span>
+                    <span id="display1"></span>
+                    <br>
+                    <span>Jogador 2:</span>
+                    <span id="display2"> </span>
+                </div>
+                <div>
+                    <h3>Instruções</h3>
+                    <p >O jogador 1 começa o jogo com o símbolo X e deve escolher uma posição no grid. 
+                        Para ganhar a rodada um dos jogadores deve fazer uma reta com a sequência de três símbolos. 
+                    </p>
                 </div>
             </div>
-
-
-            <div class="game-board" data-js-game="board">
-                <table class="col-6">
+            <div class="game-board col-9 text-center" data-js-game="board">
+                <table>
 
                     <tr>
                         <td id="square1" data-js-line="0" data-js-column="0"></td>
@@ -103,11 +99,7 @@
                 </table>
             </div>
         </div>
-        <div class="text-font col-6">
-            <h3>Instruções</h3>
-            <p>Escrever instruções</p>
-        </div>
-
+    </div>
     </section>
     <section class="hidden-section" id="tela-win">
         <div class="container text-center">
@@ -121,10 +113,6 @@
         </div>
     </section>
     <section class="hidden-section" id="tela-nobody-wins">
-        <div>
-            <h1>Jogo da Velha</h1>
-        </div>
-
         <div class="text-font">
             <span>Velha! Ninguém ganhou nesta rodada!</span>
         </div>

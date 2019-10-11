@@ -1,22 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+section {
+    height: 630px;
+    background-color: ;
+    border-bottom: 4px solid  #E2FF9E;
+    padding: 2% 2% 2% 2%;
+}
+
 .hidden-section {
     display: none;
- 
+    visibility: hidden;
 }
 
-h1 {
-    padding-top: 5%;
-    font-family: 'Press Start 2P', cursive;
+.bg-green {
+    background-color: #E9FFDE;
+}
+
+header {
+    padding-top: 1%;
+    padding-bottom: 0.1%;
+    border-bottom: 4px solid #E2FF9E;
+    border-top: 4px solid #E2FF9E;
+    font-family: 'Codystar', cursive;
+    font-size: 60px;
+    font-weight: bolder;
     text-align: center;
-    color: black
+    color: #FF91FF;
+    background-color: #FFDEFF;
 }
 
-.bg-white {
-    background-color: white;
-}
-
-.orange {
-    color: orange;
-}
 
 #size-img-1 {
     width: 145px;
@@ -24,61 +38,62 @@ h1 {
     padding-right: 10px;
 }
 
-
-
 .box {
     width: 200px;
     height: 30px;
     text-align: center;
-    color: rgb(27,90, 166);
+    color: #FF91FF;
+    background-color: #E9FFDE;
     font-size: 20px;
-    font-family: 'Source Code Pro', monospace;
     padding: 20px 20px 20px 20px;  
-    border: 1px solid  rgb(27,90, 166);
+    border: 1px solid black;
     margin-top: 15px;
-    margin-bottom: 15px;    
+    margin-bottom: 15px;   
+    font-family: 'Source Code Pro', monospace;
 }
 .text-font {
     font-family: 'Source Code Pro', monospace;
-
 }
 
 table {
-    padding-top: 20%;
+    position: absolute;
 }
+
 td {
-    width: 100px;
-    height: 100px;
+    width: 160px;
+    height: 160px;
+    align-content: center;
+    
 }
 
 #square1 {
-    border-right: 3px solid #CC8DC2;
-    border-bottom: 3px solid #CC8DC2;
+    border-right: 4px solid #CC8DC2;
+    border-bottom: 4px solid #CC8DC2;
 }
 
 #square2 {
-    border-right: 3px solid #CC8DC2;
-    border-bottom: 3px solid #CC8DC2;
+    border-right: 4px solid #CC8DC2;
+    border-bottom: 4px solid #CC8DC2;
 }
 
 #square3 {
-    border-bottom: 3px solid #CC8DC2
+    border-bottom: 4px solid #CC8DC2
     
 }
 #square4 {
-    border-right: 3px solid #CC8DC2;
-    border-bottom: 3px solid #CC8DC2;
+    border-right: 4px solid #CC8DC2;
+    border-bottom: 4px solid #CC8DC2;
 }
 #square5 {
-    border-right: 3px solid #CC8DC2;
-    border-bottom: 3px solid #CC8DC2;
+    border-right: 4px solid #CC8DC2;
+    border-bottom: 4px solid #CC8DC2;
 }
 #square6 {
-    border-bottom: 3px solid #CC8DC2;
+    border-bottom: 4px solid #CC8DC2;
 }
 #square7 {
-    border-right: 3px solid #CC8DC2;
+    border-right: 4px solid #CC8DC2;
 }
 #square8 {
-    border-right: 3px solid #CC8DC2;
+    border-right: 4px solid #CC8DC2;
 }

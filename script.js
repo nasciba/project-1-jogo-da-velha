@@ -108,6 +108,8 @@ const display1 = document.getElementById("display1");
 const display2 = document.getElementById("display2");
 const timesSymbol = new Image(50, 50);
 timesSymbol.src="./img/times.svg";
+const circleSymbol = new Image(45, 45);
+circleSymbol.src="./img/circle.png";
 
 function goToGame() {
     name1 = document.getElementById("player1").value;
@@ -149,7 +151,7 @@ function startGame() {
               
             }
             if (player === jogoDaVelha.player2) {
-                squares[i].classList.add = ("far fa-circle");
+                squares[i].appendChild(circleSymbol);
             }
             jogoDaVelha.turnPlayer();
             jogoDaVelha.checkWinner(player);
