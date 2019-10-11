@@ -5,23 +5,23 @@
 
 h1 {
     padding-top: 5%;
-    font-family: 'Love Ya Like A Sister', cursive;
+    font-family: 'Press Start 2P', cursive;
     text-align: center;
-    color: #993C8B
+    color: black
 }
 
-.bg-yellow {
-    background-color: #FFF374;
+.bg-white {
+    background-color: white;
 }
 
-#text-button {
-    color: #E6C9FF;
+.orange {
+    color: orange;
 }
 
 #size-img-1 {
     width: 145px;
     height: 170px;
-    padding-right: 10px
+    padding-right: 10px;
 }
 
 
@@ -32,21 +32,23 @@ h1 {
     text-align: center;
     color: rgb(27,90, 166);
     font-size: 20px;
-    font-family:'Love Ya Like A Sister', cursive;
+    font-family: 'Source Code Pro', monospace;
+    padding: 20px 20px 20px 20px;  
+    border: 1px solid  rgb(27,90, 166);
+    margin-top: 15px;
+    margin-bottom: 15px;    
+}
+.text-font {
+    font-family: 'Source Code Pro', monospace;
+
 }
 
-.text-font {
-    font-family: 'Love Ya Like A Sister', cursive;
-    font-size: 25px;
-    color: #827B5A
-}
 table {
     padding-top: 20%;
 }
 td {
     width: 100px;
     height: 100px;
-    
 }
 
 #square1 {

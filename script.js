@@ -99,13 +99,15 @@ let player1;
 let player2;
 let name1;
 let name2;
-let squares = document.querySelector('[data-js-game="board"]').querySelectorAll('td');
+const squares = document.querySelector('[data-js-game="board"]').querySelectorAll('td');
 const telaInicial = document.getElementById("tela-inicial");
 const telaJogo = document.getElementById("tela-jogo");
 const telaWin = document.getElementById("tela-win");
 const telaNobodyWins = document.getElementById("tela-nobody-wins");
 const display1 = document.getElementById("display1");
 const display2 = document.getElementById("display2");
+const timesSymbol = new Image(50, 50);
+timesSymbol.src="./img/times.svg";
 
 function goToGame() {
     name1 = document.getElementById("player1").value;
@@ -115,7 +117,7 @@ function goToGame() {
     jogoDaVelha = new Game(player1, player2);
 
     if (name1 === '' || name2 === '') {
-        alert("Por favor, insira os nomes dos jogadores para continuar");
+        alert("Insira os nomes dos jogadores para continuar");
 
     }
     else {
@@ -141,7 +143,14 @@ function startGame() {
                 return alert("Posição já marcada, escolha outra posição!");
             }
             jogoDaVelha.grid[line][column] = player.symbol;
-            squares[i].innerText = player.symbol;
+            
+            if (player == jogoDaVelha.player1) {
+                squares[i].appendChild(timesSymbol);
+              
+            }
+            if (player === jogoDaVelha.player2) {
+                squares[i].classList.add = ("far fa-circle");
+            }
             jogoDaVelha.turnPlayer();
             jogoDaVelha.checkWinner(player);
             if (jogoDaVelha.checkWinner === false) {
@@ -155,7 +164,7 @@ function playAgain() {
     location.reload();
 }
 
-let playAgainBtn = document.getElementById("play-again-btn");
+const playAgainBtn = document.getElementById("play-again-btn");
 playAgainBtn.addEventListener("click", playAgain)
 
 
