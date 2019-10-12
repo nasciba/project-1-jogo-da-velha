@@ -67,12 +67,7 @@ class Game {
         if (firstLine || secondLine || thirdLine
             || firstColumn || secondColumn || thirdColumn
             || leftDiagonal || rightDiagonal) {
-            setTimeout(function () {
-                let winMessage = document.getElementById('winner');
-                telaJogo.classList.add("hidden-section"),
-                    telaWin.classList.remove("hidden-section"),
-                    winMessage.innerText = `${player.name} ganhou!`;
-            }, 500);
+            return true;
         }
     }
     checkIfNobodyWins() {
@@ -153,9 +148,18 @@ function startGame() {
                 squares[i].appendChild(timesSymbol);
             }
             jogoDaVelha.turnPlayer();
-            jogoDaVelha.checkWinner(player);
-            if (jogoDaVelha.checkWinner(player) !== true) {
-                return jogoDaVelha.checkIfNobodyWins();
+            let winnerGame = jogoDaVelha.checkWinner(player);
+            if(winnerGame) {
+                setTimeout(function () {
+                    let winMessage = document.getElementById('winner');
+                    telaJogo.classList.add("hidden-section"),
+                        telaWin.classList.remove("hidden-section"),
+                        winMessage.innerText = `${player.name} ganhou!`;
+                }, 500);
+            }
+
+            else {
+                jogoDaVelha.checkIfNobodyWins();
             }
 
         }
