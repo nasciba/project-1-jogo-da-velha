@@ -2,26 +2,42 @@
     margin: 0;
     padding: 0;
 }
-section {
-    height: 630px;
-    background-color: ;
-    border-bottom: 4px solid  #E2FF9E;
-    padding: 2% 2% 2% 2%;
-}
 
 .hidden-section {
     display: none;
     visibility: hidden;
 }
 
+.aclass {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-top: 4px solid #E2FF9E;
+    border-bottom: 4px solid #E2FF9E;
+    background-color: #FFE8FE;
+}
+
+
+body {
+    background-color: #E9FFDE;
+}
+/* .padding-img {
+    padding-top: 1%;
+    padding-bottom: 1%;
+} */
+.padding-game {
+    padding-top: 2.5%;
+}
+
 .bg-green {
     background-color: #E9FFDE;
 }
 
-header {
-    padding-top: 1%;
-    padding-bottom: 0.1%;
-    border-bottom: 4px solid #E2FF9E;
+.header {
+    height: 110px;
+    padding-top: 0.1%;
+   border-bottom: 4px solid #E2FF9E;
     border-top: 4px solid #E2FF9E;
     font-family: 'Codystar', cursive;
     font-size: 60px;
@@ -31,37 +47,41 @@ header {
     background-color: #FFDEFF;
 }
 
-
-#size-img-1 {
-    width: 145px;
-    height: 170px;
-    padding-right: 10px;
-}
-
 .box {
     width: 200px;
     height: 30px;
     text-align: center;
+    font-family: 'Source Code Pro', monospace;
     color: #FF91FF;
     background-color: #E9FFDE;
     font-size: 20px;
     padding: 20px 20px 20px 20px;  
     border: 1px solid black;
-    margin-top: 15px;
-    margin-bottom: 15px;   
-    font-family: 'Source Code Pro', monospace;
+    margin-top: 5px;
+    margin-bottom: 5px;   
 }
+
 .text-font {
     font-family: 'Source Code Pro', monospace;
+    font-weight: bold;
+    font-size: 18px;
+    color: black
+}
+
+.cursive {
+    font-family: 'Sacramento', cursive;
+    font-size: 50px;
+    font-weight: lighter;
 }
 
 table {
     position: absolute;
+    justify-content: center;
 }
 
 td {
-    width: 160px;
-    height: 160px;
+    width: 155px;
+    height: 155px;
     align-content: center;
     
 }

@@ -68,7 +68,7 @@ class Game {
             || firstColumn || secondColumn || thirdColumn
             || leftDiagonal || rightDiagonal) {
             setTimeout(function () {
-                let winMessage = document.getElementsByTagName('h1')[2];
+                let winMessage = document.getElementById('winner');
                 telaJogo.classList.add("hidden-section"),
                     telaWin.classList.remove("hidden-section"),
                     winMessage.innerText = `${player.name} ganhou!`;
@@ -81,11 +81,12 @@ class Game {
                 if (this.grid[i][j] === 0) {
                     return false;
                 }
+                
             }
         }
         return setTimeout(function () {
             const telaNobodywins = document.getElementById("tela-nobody-wins");
-            let nobodyWinsMsg = document.getElementsByTagName('h1')[3];
+            let nobodyWinsMsg = document.getElementById('nobody-wins');
             return telaJogo.classList.add("hidden-section"),
                 telaNobodywins.classList.remove("hidden-section"),
                 nobodyWinsMsg.innerText = "Ninguém ganhou nesta rodada";
@@ -109,7 +110,7 @@ const display2 = document.getElementById("display2");
 const timesSymbol = new Image(50, 50);
 timesSymbol.src="./img/times.svg";
 const circleSymbol = new Image(45, 45);
-circleSymbol.src="./img/circle.png";
+circleSymbol.src="./img/circle.svg";
 
 function goToGame() {
     name1 = document.getElementById("player1").value;
@@ -145,16 +146,15 @@ function startGame() {
                 return alert("Posição já marcada, escolha outra posição!");
             }
             jogoDaVelha.grid[line][column] = player.symbol;
-            
-            if (player == jogoDaVelha.player1) {
-                squares[i].appendChild(timesSymbol);
+            squares[i].innerText=player.symbol;
               
-            }
-            if (player === jogoDaVelha.player2) {
-                squares[i].appendChild(circleSymbol);
-            }
+            // }
+            // if (player === jogoDaVelha.player2) {
+            //     squares[i].appendChild(circleSymbol);
+            // }
             jogoDaVelha.turnPlayer();
             jogoDaVelha.checkWinner(player);
+            // jogoDaVelha.checkIfNobodyWins();
             if (jogoDaVelha.checkWinner === false) {
                 return jogoDaVelha.checkIfNobodyWins();
             }

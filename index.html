@@ -6,125 +6,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Jogo da Velha</title>
-    <script src="https://use.fontawesome.com/bcdc1f8f60.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="bootstrap.css">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Codystar&display=swap" rel="stylesheet');
         @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet');
+        @import url('https://fonts.googleapis.com/css?family=Sacramento&display=swap" rel="stylesheet');
     </style>
 
 </head>
 
-<body>
-    <header>
-        <p>Jogo da Velha<p>
-    </header>
-    <section class="bg-green" id="tela-inicial">
-        <div>
+<body class="bg-green">
 
-        </div>
-        <br>
+    <p class="header">Jogo da Velha<p>
 
-        <div class="container text-center justify-content-center">
-            <div class="row">
-                <div class="col-4">
-                    <img src="./img/baddie-removebg-preview.png" class="img-fluid float-left " alt="baddie winkle">
-                </div>
-                <div class="col-4">
-                    <div>
-                        <span class="text-font">Jogador 1:</span>
-                        <br>
-                        <input type="text" class="box" id="player1">
+            <section class="bg-green" id="tela-inicial">
+                <br>
+                <div class="container text-center justify-content-center">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="./img/baddie-removebg-preview.png" class="img-fluid float-left "
+                                alt="baddie in rainbow t-shirt">
+                        </div>
+                        <div class="col-4">
+                            <div>
+                                <span class="text-font">Jogador 1:</span>
+                                <br>
+                                <input type="text" class="box" id="player1">
+                            </div>
+
+                            <div>
+                                <span class="text-font">Jogador 2:</span>
+                                <br>
+                                <input type="text" class="box" id="player2">
+                            </div>
+                            <br>
+                        </div>
+
+                        <div class="col-4">
+                            <img src="./img/baddie-removebg-preview.png" class="img-fluid float-right "
+                                alt="baddie winkle">
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="button" class="btn border-dark text-center" id="start-game">
+                                <span class="" id=""> JOGAR! <span>
+                            </button>
+                        </div>
                     </div>
-
-                    <div class="">
-                        <span class="text-font">Jogador 2:</span>
-                        <br>
-                        <input type="text" class="box" id="player2">
-                    </div>
-                    <br>
                 </div>
-
-                <div class="col-4">
-                    <img src="./img/baddie-removebg-preview.png" class="img-fluid float-right " alt="baddie winkle">
-                </div>
-                <div class="col-12 text-center">
-                    <button type="button" class="btn border-dark text-center" id="start-game">
-                        <span class="" id=""> JOGAR! <span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tela-jogo" class="bg-green hidden-section">
-        <div class="container">
-        <div class="row">
-            <div class="col-3 text-font text-left">
-                <div>
-                    <span>Jogador 1:</span>
-                    <span id="display1"></span>
-                    <br>
-                    <span>Jogador 2:</span>
-                    <span id="display2"> </span>
-                </div>
-                <div>
-                    <h3>Instruções</h3>
-                    <p >O jogador 1 começa o jogo com o símbolo X e deve escolher uma posição no grid. 
-                        Para ganhar a rodada um dos jogadores deve fazer uma reta com a sequência de três símbolos. 
+                <div class="aclass text-center">
+                    <p class="cursive">Instruções:</p>
+                    <p class="text-font">O jogador 1 inicia a partida com o símbolo X e deve escolher uma posição no
+                        grid.
                     </p>
+                    <p class="text-font">O jogador que fizer uma sequência de três símbolos na vertical, horizontal ou
+                        diagonal vence o jogo.</p>
                 </div>
-            </div>
-            <div class="game-board col-9 text-center" data-js-game="board">
-                <table>
 
-                    <tr>
-                        <td id="square1" data-js-line="0" data-js-column="0"></td>
-                        <td id="square2" data-js-line="0" data-js-column="1"></td>
-                        <td id="square3" data-js-line="0" data-js-column="2"></td>
-                    </tr>
-                    <tr>
-                        <td id="square4" data-js-line="1" data-js-column="0"></td>
-                        <td id="square5" data-js-line="1" data-js-column="1"></td>
-                        <td id="square6" data-js-line="1" data-js-column="2"></td>
-                    </tr>
-                    <tr>
-                        <td id="square7" data-js-line="2" data-js-column="0"></td>
-                        <td id="square8" data-js-line="2" data-js-column="1"></td>
-                        <td id="square9" data-js-line="2" data-js-column="2"></td>
-                    </tr>
+            </section>
 
-                </table>
-            </div>
-        </div>
-    </div>
-    </section>
-    <section class="hidden-section" id="tela-win">
-        <div class="container text-center">
-            <h1 class="col-12 padding-top" data-js-winner="player-name"></h1>
-            <br>
-            <div class="col-12">
-                <img src="./img/final.gif" class="rounded" id="" alt="baddie winkle">
-            </div>
-            <br>
-            <button type="button" class="btn border-dark text-center" id="play-again-btn">JOGAR DE NOVO!</button>
-        </div>
-    </section>
-    <section class="hidden-section" id="tela-nobody-wins">
-        <div class="text-font">
-            <span>Velha! Ninguém ganhou nesta rodada!</span>
-        </div>
-        <br>
-        <div>
-            <button type="button" class="btn border-dark text-center" id="play-again-btn">Jogar de novo</button>
-        </div>
+            <section id="tela-jogo" class="bg-green hidden-section">
+                <div class="container bg-green">
+                    <div class="row">
+                        <div class="col-3  padding-game text-center">
+                            <div class="text-center">
+                                <span class="text-font">Jogador 1:</span>
+                                <br>
+                                <span class="cursive" id="display1"></span>
+                                <img src="./img/player1.png" class="img-fluid float-left padding-img"
+                                    alt="baddie in pink jacket">
 
-    </section>
+                            </div>
+
+                        </div>
+                        <div class="game-board col-6 text-center padding-game" data-js-game="board">
+                            <table>
+
+                                <tr>
+                                    <td id="square1" data-js-line="0" data-js-column="0"></td>
+                                    <td id="square2" data-js-line="0" data-js-column="1"></td>
+                                    <td id="square3" data-js-line="0" data-js-column="2"></td>
+                                </tr>
+                                <tr>
+                                    <td id="square4" data-js-line="1" data-js-column="0"></td>
+                                    <td id="square5" data-js-line="1" data-js-column="1"></td>
+                                    <td id="square6" data-js-line="1" data-js-column="2"></td>
+                                </tr>
+                                <tr>
+                                    <td id="square7" data-js-line="2" data-js-column="0"></td>
+                                    <td id="square8" data-js-line="2" data-js-column="1"></td>
+                                    <td id="square9" data-js-line="2" data-js-column="2"></td>
+                                </tr>
+
+                            </table>
+                        </div>
+                        <div class="col-3 padding-game text-center">
+                            <span class="text-font">Jogador 2:</span>
+                            <br>
+                            <span class="cursive" id="display2"> </span>
+                            <img src="./img/player2.png " class="img-fluid float-right padding-img"
+                                alt="baddie in pink jacket">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="hidden-section bg-green" id="tela-win">
+                <div class="container text-center">
+                    <h1 class="col-12 padding-game cursive" id="winner" data-js-winner="player-name"></h1>
+                    <div class="col-12">
+                        <img src="./img/final.gif" class="rounded" id="" alt="baddie winkle">
+                    </div>
+                    <br>
+                    <button type="button" class="btn border-dark text-center" id="play-again-btn">JOGAR DE
+                        NOVO!</button>
+                </div>
+            </section>
+            <section class="hidden-section" id="tela-nobody-wins">
+                <div class="text-font">
+                    <h1 class="col-12 padding-game cursive" id="nobody-wins"></h1>
+                </div>
+                <div>
+                    <button type="button" class="btn border-dark text-center" id="play-again-btn">JOGAR DE NOVO!</button>
+                </div>
+
+            </section>
 
 
-    <script type="text/javascript" src="./script.js"></script>
+            <script type="text/javascript" src="./script.js"></script>
 </body>
 
 </html>
