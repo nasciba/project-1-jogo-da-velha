@@ -94,7 +94,6 @@ class Game {
     }
 }
 
-
 let jogoDaVelha;
 let player1;
 let player2;
@@ -107,10 +106,6 @@ const telaWin = document.getElementById("tela-win");
 const telaNobodyWins = document.getElementById("tela-nobody-wins");
 const display1 = document.getElementById("display1");
 const display2 = document.getElementById("display2");
-const timesSymbol = new Image(50, 50);
-timesSymbol.src = "./img/times.svg";
-const circleSymbol = new Image(45, 45);
-circleSymbol.src = "./img/circle.svg";
 
 function goToGame() {
     name1 = document.getElementById("player1").value;
@@ -146,32 +141,37 @@ function startGame() {
                 return alert("Posição já marcada, escolha outra posição!");
             }
             jogoDaVelha.grid[line][column] = player.symbol;
-            squares[i].innerText = player.symbol;
 
-            // }
-            // if (player === jogoDaVelha.player2) {
-            //     squares[i].appendChild(circleSymbol);
-            // }
+            if (player === jogoDaVelha.player2) {
+                const circleSymbol = new Image(45, 45);
+                circleSymbol.src = "./img/circle.svg";
+                squares[i].appendChild(circleSymbol);
+            }
+            if (player === jogoDaVelha.player1) {
+                const timesSymbol = new Image(50, 50);
+                timesSymbol.src = "./img/times.svg";
+                squares[i].appendChild(timesSymbol);
+            }
             jogoDaVelha.turnPlayer();
             jogoDaVelha.checkWinner(player);
-            jogoDaVelha.checkIfNobodyWins();
-            // jogoDaVelha.checkIfNobodyWins();
             if (jogoDaVelha.checkWinner(player) !== true) {
                 return jogoDaVelha.checkIfNobodyWins();
             }
+
         }
-        
-    };
 
     }
 
-    
+};
 
-    function playAgain() {
-        location.reload();
-    }
+function playAgain() {
+    location.reload();
+}
 
-    const playAgainBtn = document.getElementById("play-again-btn");
-    playAgainBtn.addEventListener("click", playAgain)
+const playAgainBtn = document.querySelectorAll(".play-again-btn");
+for (let i = 0; i < playAgainBtn.length; i += 1) {
+    playAgainBtn[i].addEventListener("click", playAgain);
+}
+
 
 
